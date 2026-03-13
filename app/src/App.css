@@ -1,0 +1,188 @@
+@font-face {
+  font-family: 'PixelMplus';
+  src: url('/fonts/PixelMplus12-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body,
+#root {
+  font-family: "PixelMplus", monospace;
+    font-size: 18px;
+}
+
+/* 土台：中央寄せを守る */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* スクロールを気持ちよく */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 全体 */
+body {
+  margin: 0;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50vh;
+  background: url("/backgroundj.png") no-repeat bottom center;
+  background-size: cover;
+  opacity: 0.22;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.page {
+  text-align: center;
+}
+
+/* ナビ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  /* 画面中央から左右いっぱいに広げる */
+
+  background: #d7c4cf;
+}
+
+/* 中身は今まで通り中央寄せ */
+.navInner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.2rem 1rem;
+
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.navLink {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  color: #3a3338;
+  letter-spacing: 0.08em;
+  font: inherit;
+  /* PixelMplusを継承 */
+}
+
+.navLink:hover {
+  transform: translateY(-2px);
+}
+
+/* ヒーロー */
+.hero {
+  position: relative;
+}
+
+.logo {
+  width: 320px;
+  max-width: 80%;
+  height: auto;
+  display: block;
+  margin: 0.5rem auto 0;
+}
+
+.top-jave {
+  width: 800px;
+  max-width: 92%;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto 0;
+}
+
+.welcome {
+  margin-top: 1.5rem;
+}
+
+/* 左下 矢印（Welcomeブロック内） */
+.downArrow {
+  position: absolute;
+  left: 1rem;
+  bottom: -2rem;
+  width: 56px;
+  height: 56px;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  background: rgba(215, 196, 207, 0.75);
+  color: #3a3338;
+  font: inherit;
+}
+
+.downArrow:hover {
+  transform: translateY(2px);
+}
+
+/* セクション（紹介文など） */
+.section {
+  padding: 4rem 1rem 6rem;
+}
+
+.about {
+  position: relative;
+  /* 右下ジャヴをセクション内に置く */
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+  /* 紹介文は左揃えの方が読みやすい */
+}
+
+.aboutText {
+  line-height: 1.9;
+}
+
+.about ul {
+  margin: 1rem 0;
+  padding-left: 1.2rem;
+}
+
+.note {
+  opacity: 0.8;
+}
+
+.spacer {
+  height: 2rem;
+}
+
+/* 右下ジャヴ（ABOUTセクション内の右下） */
+.backToTopJave {
+  position: absolute;
+  right: 1rem;
+  bottom: 5rem;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.backToTopJave img {
+  width: 200px;
+  height: auto;
+  display: block;
+}
+
+/* フッター */
+.footer {
+  text-align: center;
+  padding: 2rem 1rem 3rem;
+  opacity: 0.85;
+}
