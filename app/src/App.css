@@ -180,6 +180,23 @@ body::before {
   display: block;
 }
 
+/* AboutJave.css */
+.javeImg {
+  width: 200px;
+  display: block;
+  margin: 0 auto;
+}
+
+.aboutText {
+  max-width: 600px;
+}
+
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  pointer-events: none;
+}
+
 /* フッター */
 .footer {
   text-align: center;

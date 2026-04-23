@@ -1,15 +1,15 @@
-import Header from "./components/Header";
+import Headeretc from "./components/Headeretc";
 import "./App.css";
 
 export default function Blog() {
   return (
     <>
-      <Header />
+      <Headeretc />
       <main className="page">
         <section className="section about">
           <div className="aboutText">
             <h1>BLOG</h1>
-            <p>準備中</p>
+            <p>noteを予定しています。</p>
           </div>
         </section>
       </main>

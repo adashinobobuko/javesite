@@ -30,7 +30,6 @@ export default function Home() {
             className="logo"
           />
 
-          {/* ここがポイント：imgをdivで包んでホバー/タップを受ける */}
           <div
             className="topJaveWrap"
             onMouseEnter={() => setIsHeroActive(true)}
@@ -86,7 +85,7 @@ export default function Home() {
 
             <div className="spacer" />
 
-            <p>My name is Adashino Kikyo.</p>
+            <p>My name is Kikyo Adashino.</p>
             <p>
               I am a multidisciplinary creator working around my original character, the spirit Jave.
               The illustration shown at the top also features Jave.
