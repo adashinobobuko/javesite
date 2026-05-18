@@ -1,22 +1,53 @@
+import { useState } from "react";
 import Headeretc from "./components/Headeretc";
 import "./App.css";
 
+const messages = [
+  "ちゅるる～！",
+  "きゅう♪",
+  "…ちゅ？",
+  "きゅるきゅる～！",
+  "ちゅっ！",
+];
+
 export default function AboutJave() {
+  const [message, setMessage] = useState(null);
+
+  const handleClick = () => {
+    const others = messages.filter((m) => m !== message);
+    const random = others[Math.floor(Math.random() * others.length)];
+    setMessage(random);
+  };
+
   return (
     <>
       <Headeretc />
       <main className="page">
         <section className="section about">
-
           <div className="aboutText">
             <h1>WHO IS JAVE?</h1>
             <h2>ジャヴ（Jave）</h2>
 
-            <img
-              src="/javehesotenhaikeinashi.png"
-              alt="ジャヴの立ち絵"
-              className="javeImg"
-            />
+            {/* ここだけ変更 */}
+            <div
+              className="javeClickArea"
+              onClick={handleClick}
+              role="button"
+              tabIndex={0}
+              aria-label="ジャヴに話しかける"
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") handleClick();
+              }}
+            >
+              <img
+                src="/javehesotenhaikeinashi.png"
+                alt="ジャヴの立ち絵"
+                className="javeImg"
+              />
+              {message && (
+                <div className="javeBalloon">{message}</div>
+              )}
+            </div>
 
             <p>
               ジャヴは小さくて愛らしい精霊です。通称「彗星の子」。

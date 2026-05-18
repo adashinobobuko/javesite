@@ -188,7 +188,7 @@ body::before {
 }
 
 .aboutText {
-  max-width: 600px;
+  max-width: 1200px;
 }
 
 img {
@@ -202,4 +202,45 @@ img {
   text-align: center;
   padding: 2rem 1rem 3rem;
   opacity: 0.85;
+}
+
+/* オープニング */
+.opening {
+  position: fixed;
+  inset: 0;
+  background: #d7c4cf;
+  /* 好きな色でOK */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.openingJave {
+  width: 256px;
+  /* サイズ調整 */
+  image-rendering: pixelated;
+  /* ドットならこれ */
+}
+
+/*AboutJave*/
+.javeClickArea {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.javeBalloon {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border: 2px solid #aaa;
+  border-radius: 12px;
+  padding: 6px 12px;
+  white-space: nowrap;
+  font-size: 1rem;
 }

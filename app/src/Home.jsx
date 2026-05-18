@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import "./App.css";
+import Opening from "./Opening";
 
 export default function Home() {
   const [isHeroActive, setIsHeroActive] = useState(false);
-
+  const [showOpening, setShowOpening] = useState(false);
+  const [checked, setChecked] = useState(false);
   const scrollTo = (id) => {
     if (id === "top") {
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -14,6 +16,27 @@ export default function Home() {
     if (!el) return;
     el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
+
+  useEffect(() => {
+  const hasSeenOpening = localStorage.getItem("hasSeenOpening");
+
+  if (!hasSeenOpening) {
+    setShowOpening(true);
+
+    setTimeout(() => {
+      setShowOpening(false);
+      localStorage.setItem("hasSeenOpening", "true");
+    }, 3000);
+  }
+
+  setChecked(true);
+  }, []);
+
+  if (!checked) return null;
+
+  if (showOpening) {
+    return <Opening />;
+  }
 
   return (
     <>
