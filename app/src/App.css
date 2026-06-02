@@ -41,7 +41,7 @@ body::before {
   height: 50vh;
   background: url("/backgroundj.png") no-repeat bottom center;
   background-size: cover;
-  opacity: 0.22;
+  opacity: 0.10;
   pointer-events: none;
   z-index: -1;
 }
@@ -71,7 +71,7 @@ body::before {
 
   display: flex;
   justify-content: center;
-  gap: 4rem;
+  gap: 8rem;
 }
 
 .navLink {
@@ -82,6 +82,7 @@ body::before {
   color: #3a3338;
   letter-spacing: 0.08em;
   font: inherit;
+  font-size: 1.3rem;
   /* PixelMplusを継承 */
 }
 
@@ -244,3 +245,102 @@ img {
   white-space: nowrap;
   font-size: 1rem;
 }
+
+/* 横はみ出し防止 */
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* ナビのスマホ対応 */
+@media (max-width: 600px) {
+
+  body,
+  #root {
+    font-size: 15px;
+  }
+
+  .navInner {
+    padding: 0.8rem 0.4rem;
+    gap: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .navLink {
+    font-size: 0.72rem;
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+
+  .logo {
+    width: min(260px, 90vw);
+    max-width: 90vw;
+    margin: 0.5rem auto 0;
+  }
+
+  .top-jave {
+    width: min(360px, 92vw);
+    max-width: 92vw;
+    margin-top: 1rem;
+  }
+
+  .section {
+    padding: 3rem 1rem 4rem;
+  }
+
+  .about {
+    max-width: 100%;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
+  }
+
+  .aboutText {
+    line-height: 1.8;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  .downArrow {
+    left: 0.8rem;
+    bottom: -1.5rem;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+  }
+
+  .downArrow img {
+    width: 44px;
+    height: auto;
+    display: block;
+  }
+
+  .backToTopJave {
+    position: fixed;
+    right: 0.6rem;
+    bottom: 0.8rem;
+    z-index: 90;
+    padding: 0;
+  }
+
+  .backToTopJave img {
+    width: 76px;
+  }
+}
+
+/* 小さめサイズ用 */
+@media (max-width: 375px) {
+  .navInner {
+    gap: 0.45rem;
+  }
+
+  .navLink {
+    font-size: 0.7rem;
+    letter-spacing: 0;
+  }
+
+  .backToTopJave img {
+    width: 76px;
+  }
+}
+

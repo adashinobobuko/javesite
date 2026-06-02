@@ -78,7 +78,7 @@ export default function Home() {
           <button
             type="button"
             className="downArrow"
-            onClick={() => scrollTo("about")}
+            onClick={() => scrollTo("x")}
             aria-label="紹介文へスクロール"
           >
             <img src="/yazirusi.gif" alt="下矢印" />
